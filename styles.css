@@ -1,0 +1,156 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --accent-color: #641BFF;
+  --heading-font-family: 'Poppins', sans-serif;
+  --body-font-family: 'Lato', sans-serif;
+}
+
+body {
+  margin: 0;
+  background-color: #F8F9FB;
+  min-width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--body-font-family);
+}
+
+.price-comparison {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  width: 100%;
+  margin: 1rem;
+}
+
+.price-column {
+  background-color: white;
+  box-shadow: 0 7px 30px rgba(52, 31, 97, 0.1);
+  padding: 2rem;
+  flex-grow: 1;
+  flex-basis: 0;
+  max-width: 275px;
+  border-radius: 8px;
+}
+
+.price-column.popular {
+  position: relative;
+  background-color: var(--accent-color);
+  box-shadow: 0 7px 30px rgba(52, 13, 135, 0.3);
+  color: white;
+  margin-top: -1.5rem;
+  padding-top: 3.5rem;
+  margin-bottom: -1.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.price-column:first-child {
+  border-top-right-radius: 0; 
+  border-bottom-right-radius: 0; 
+}
+
+.price-column:last-child {
+  border-top-left-radius: 0; 
+  border-bottom-left-radius: 0; 
+}
+
+.price-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+}
+
+.price {
+  font-size: 3.5rem;
+  display: flex;
+}
+
+.dollar-sign {
+  font-size: 1.5rem;
+  margin-top: .5rem;
+  margin-right: .25rem;
+}
+
+.per-month {
+  font-size: .75rem;
+  align-self: flex-end;
+  margin-bottom: 1.1rem;
+  text-transform: uppercase;
+}
+
+.plan-name {
+  text-transform: uppercase;
+  font-size: .9rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.divider {
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, .2);
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.price-column.popular .divider {
+  background-color: rgba(255, 255, 255, .2);
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  margin: .5rem;
+}
+
+.feature img {
+  height: 1.1em;
+  width: 1.1em;
+  margin-right: .5rem;
+}
+
+.feature.inactive {
+  color: #999;
+  text-decoration-line: line-through;
+}
+
+.most-popular {
+  position: absolute;
+  top: .5rem;
+  left: .5rem;
+  right: .5rem;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: var(--heading-font-family);
+}
+
+.cta {
+  border: none;
+  background-color: var(--accent-color);
+  color: white;
+  width: 100%;
+  padding: .75rem 1rem;
+  cursor: pointer;
+  font-family: var(--heading-font-family);
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 3rem;
+  transition: 100ms;
+  transform: scale(1);
+}
+
+.price-column.popular .cta {
+  background-color: white;
+  color: var(--accent-color);
+}
+
+.cta:hover, .cta:focus {
+  transform: scale(1.1);
+}
